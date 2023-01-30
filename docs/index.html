@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<!-- Remember, each license repository is for a specific version of a license. -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Example License v1</title>
+<link rel="stylesheet" href="/assets/entry-v1.css">
+<link rel="stylesheet" href="/assets/page-v1.css">
+<style>
+
+</style>
+</head>
+<body>
+<script>
+//Set the path to the license file. This is used to copy the text into this webpage, and to create a download link.
+window.license_file_path = '/example-license-v1/uploads/Example License v1.txt';
+</script>
+
+<script src="/assets/page-v1.js"></script>
+<script>
+
+</script>
+
+<script>
+var file_contents = new XMLHttpRequest();
+file_contents.onload = function(){
+    document.getElementById("document1").innerHTML = this.responseText;
+}
+file_contents.open("GET", window.license_file_path, true);
+file_contents.responseType = 'text';
+file_contents.send();
+</script>
+<div id='content'>
+<h1>Example License v1</h1>
+<h2>Overview</h2>
+
+<div itemscope itemtype="https://schema.org/CreativeWork">
+<dl>
+<dt>Name:</dt>
+<dd itemprop="name">Example License v1</dd>
+<div class='break'></div>
+<dt>Authors:</dt>
+<dd itemprop="author">Re-usable License Collaboration</dd>
+<div class='break'></div>
+<dt>Publication Date:</dt> 
+<dd><meta itemprop="datePublished" content="2022-03-26">March 26, 2022</dd>
+<div class='break'></div>
+<dt>Official Source:</dt>
+<dd><a class='default_links' href="https://reusablelicensecollaboration.github.io/example-license-v1/" itemprop="url">https://reusablelicensecollaboration.github.io/example-license-v1/</a></dd>
+<div class='break'></div>
+</dl>
+<p itemprop="description">Example License v1 is not a license. It is used as example text in the R.L.C. license repo example repository.</p>
+</div>
+
+<h3>Type</h3>
+<ul>
+<!-- Valid types are: Public Domain Dedication, Permissive License, Reciprocal License (aka Copyleft, ShareALike), Opensource License, "Ethical" License, Source Available License (aka Read-only License, Verbatim License), Free Software License, Crayon License. A License may meet the criteria of multiple types.-->
+<li class='type_true'>Source Available License</li>
+<li class='type_true'>Crayon License</li>
+</ul>
+
+<h3>Features</h3>
+<ul>
+<li class='features_false'>Disclaimer</li>
+<li class='features_false'>Attribution</li>
+<li class='features_false'>Copyright Notice Retention</li>
+<li class='features_false'>License Text Retention</li>
+</ul>
+
+<h3>Permissions</h3>
+<ul>
+<li class='permissions_false'>Copy</li>
+<li class='permissions_false'>Modify</li>
+<li class='permissions_false'>Share</li>
+</ul>
+
+<h2>Document</h2>
+<p class='document' id='document1'>The text for this license is either unavailable, has been intentionally excluded, or failed to load. Check that your browser has Javascript enabled.</p>
+
+<a id='download_button' class='download_button' href="license.txt" download="license.txt">Download</a> 
+<script>
+document.getElementById("download_button").href = window.license_file_path
+</script>
+    
+<h2>Related Articles</h2>
+<ul>
+<li class='related_articles_list'><a class='default_links' href="/posts/what-are-licenses.html">What Are Licenses?</a> - R.L.C.</li>
+</ul>
+
+<h2 class='h2_soft' id='meta_header' onclick="show_hide_meta()">&and; Meta (about this page)</h2>
+<script>
+function show_hide_meta() {	
+	var check = document.getElementById("meta_content").style.display;
+	if (check !== 'none') {
+		document.getElementById("meta_content").style.display = 'none';
+		document.getElementById("meta_header").innerHTML = '&and; Meta (about this page)';
+		document.getElementById("meta_header").classList.toggle("h2_soft");
+	} else {
+		document.getElementById("meta_content").style.display = 'unset';
+		document.getElementById("meta_header").innerHTML = '&or; Meta (about this page)';
+		document.getElementById("meta_header").classList.remove('h2_soft');
+	}
+}
+</script>
+<input type="text" id="inline_clipboard" value="">
+<ul id='meta_content' style='display:none'>
+<li class='meta_list'>Published March 26, 2022. Last updated May 14, 2022.</li>
+<li class='meta_list'>Contributers: James Daniel Marrs Ritchey.</li>
+<li class='meta_list'>Citations: 
+	 <ul class='meta_sub_list'>
+      <li>APA: 
+      <div class="citations_in_text">In Text: <div class="selectable_text" onclick="select_text_v1(this)" id="apa_in_text"></div></div>
+      <div class="citations_references">References: <div class="selectable_text" onclick="select_text_v1(this)" id="apa_references"></div></div>
+      </li>
+      <li>Custom: 
+      <div class="citations_in_text">In Text: <div class="selectable_text" onclick="select_text_v1(this)" id="custom_in_text"></div></div>
+      <div class="citations_references">References: <div class="selectable_text" onclick="select_text_v1(this)" id="custom_references"></div></div>
+      </li>
+    </ul>
+    <script>
+	document.getElementById("apa_in_text").innerHTML = '(Ritchey, 2022)';
+	document.getElementById("apa_references").innerHTML = 'Ritchey, J. (2022). Example License v1. https://' + window.location.hostname + '/example-license-v1.';
+	document.getElementById("custom_in_text").innerHTML = '(https://' + window.location.hostname + '/example-license-v1)';
+	document.getElementById("custom_references").innerHTML = 'R.L.C. - Example License v1 (https://' + window.location.hostname + '/example-license-v1).';
+	function select_text_v1(element) {
+		document.getElementById('inline_clipboard').value = element.innerHTML;
+		var selectable_text = document.getElementsByClassName('selectable_text');
+		for (var i = 0; i < selectable_text.length; i++) {
+			selectable_text[i].style.backgroundColor = '#EEEEEE';
+			selectable_text[i].style.color = 'unset';
+		}
+		element.style.backgroundColor = 'rgb(48, 73, 204)';
+		element.style.color = '#EEEEEE';
+ 		var inline_clipboard = document.getElementById('inline_clipboard');
+ 		inline_clipboard.select();
+ 		navigator.clipboard.writeText(inline_clipboard.value);
+	}
+	</script>
+</li>
+</ul>
+</div>
+</body>
+</html>
